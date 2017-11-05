@@ -47,18 +47,18 @@ namespace AppProjectBD
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    MainWindow dashboard = new MainWindow();
-                    dashboard.Show();
+                    MainWindow main = new MainWindow();
+                    main.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Username or password is incorrect.");
+                    MessageBox.Show("Логин, пароль или роль не правилно");
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Пожалуйста запольняйте все поли");
             }
             finally
             {
@@ -84,7 +84,7 @@ namespace AppProjectBD
                     con.Open();
 
                 OracleCommand cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT РОЛЬ FROM ПОЛЬЗОВАТЕЛЬ";
+                cmd.CommandText = "SELECT DISTINCT РОЛЬ FROM ПОЛЬЗОВАТЕЛЬ ORDER BY РОЛЬ DESC";
                 cmd.CommandType = CommandType.Text;
                 OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -102,6 +102,13 @@ namespace AppProjectBD
             {
                 con.Close();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow r = new RegistrationWindow();
+            r.Show();
+            this.Close();
         }
     }
 }

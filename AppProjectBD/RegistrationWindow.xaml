@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="300" Width="300">
-    <Grid>
-        
+        Title="RegistrationWindow" Height="322" Width="326" Closed="Window_Closed">
+    <Grid Margin="10,0,0,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Регистрация Заказчика" HorizontalAlignment="Left" Height="178" Margin="10,25,0,0" VerticalAlignment="Top" Width="272" Content=""/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="23,93,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="23,128,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="23,58,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+        <Label Content="Повторно пароль" HorizontalAlignment="Left" Margin="23,163,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
+        <TextBox x:Name="tbFunction" HorizontalAlignment="Left" Height="19" Margin="138,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" IsEnabled="False" Text="Заказчик"/>
+        <PasswordBox x:Name="tbPassword_again" HorizontalAlignment="Left" Height="19" Margin="138,167,0,0" VerticalAlignment="Top" Width="119"/>
+        <PasswordBox x:Name="tbPassword" HorizontalAlignment="Left" Height="19" Margin="138,132,0,0" VerticalAlignment="Top" Width="119"/>
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="19" Margin="138,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119"/>
+        <Button x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Width="78" Click="btReset_Click"/>
+        <Button x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.013,0.55" Click="btAdd_Click"/>
+        <Button x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="204,212,0,0" VerticalAlignment="Top" Width="78" Click="btCancel_Click"/>
+        <Button x:Name="btLogin" Content="Логин" HorizontalAlignment="Left" Height="22" Margin="10,244,0,0" VerticalAlignment="Top" Width="272" Click="btLogin_Click"/>
+
+
     </Grid>
 </Window>
