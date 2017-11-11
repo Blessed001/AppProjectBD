@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FurnituraWindow.xaml.cs">
+      <DependentUpon>FurnituraWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzdeleieWindow.xaml.cs">
       <DependentUpon>IzdeleieWindow.xaml</DependentUpon>
     </Compile>
@@ -65,6 +68,10 @@
     <Compile Include="TkaniWindow.xaml.cs">
       <DependentUpon>TkaniWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="FurnituraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzdeleieWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

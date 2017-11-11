@@ -47,5 +47,11 @@ namespace AppProjectBD
             IzdeleieWindow i = new IzdeleieWindow();
             i.Show();
         }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            FurnituraWindow f = new FurnituraWindow();
+            f.Show();
+        }
     }
 }
