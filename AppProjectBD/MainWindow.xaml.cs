@@ -28,5 +28,18 @@ namespace AppProjectBD
         {
             InitializeComponent();
         }
+
+        private void menuFile12_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow l = new LoginWindow();
+            l.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            TkaniWindow t = new TkaniWindow();
+            t.Show();
+        }
     }
 }

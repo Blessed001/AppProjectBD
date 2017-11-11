@@ -6,5 +6,20 @@
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="517">
+            <MenuItem x:Name="menuFile1" Header="Файл">
+                <MenuItem x:Name="menuFile12" Header="Выход" Click="menuFile12_Click"/>
+            </MenuItem>
+            <MenuItem Header="Ткань" Click="MenuItem_Click"/>
+            <MenuItem Header="Inicio2">
+                <MenuItem Header="Item1"/>
+                <MenuItem Header="Item2"/>
+            </MenuItem>
+            <MenuItem Header="Inicio3">
+                <MenuItem Header="Item1"/>
+                <MenuItem Header="Item2"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
 </Window>
