@@ -41,5 +41,11 @@ namespace AppProjectBD
             TkaniWindow t = new TkaniWindow();
             t.Show();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            IzdeleieWindow i = new IzdeleieWindow();
+            i.Show();
+        }
     }
 }

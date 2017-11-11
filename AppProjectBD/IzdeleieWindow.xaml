@@ -1,0 +1,30 @@
+﻿<Window x:Class="AppProjectBD.IzdeleieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppProjectBD"
+        mc:Ignorable="d"
+        Title="IzdelieWindow" Height="580.372" Width="1230.638" Closed="Window_Closed" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Header="Информация о изделях" FontSize="20" HorizontalAlignment="Left" Height="378" Margin="10,0,0,0" VerticalAlignment="Top" Width="362" FontWeight="Bold"/>
+        <DataGrid x:Name="IzdeliedataGrade" HorizontalAlignment="Left" Height="504" Margin="407,10,0,0" VerticalAlignment="Top" Width="806" RenderTransformOrigin="0.571,0.453" SelectionChanged="IzdeliedataGrade_SelectionChanged"/>
+        <Label Content="Артикул" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="26,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Изображение" HorizontalAlignment="Left" Margin="26,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.492,0.38" Height="37" Width="93"/>
+        <Label Content="Ширина" HorizontalAlignment="Left" Margin="26,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Длина" HorizontalAlignment="Left" Margin="26,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Комментарий" HorizontalAlignment="Left" Margin="26,254,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <TextBox x:Name="tbArtikul" HorizontalAlignment="Left" Height="26" Margin="124,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbNaimenovania" HorizontalAlignment="Left" Height="26" Margin="124,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbChirina" HorizontalAlignment="Left" Height="26" Margin="124,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbDlina" HorizontalAlignment="Left" Height="26" Margin="124,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbCommentari" HorizontalAlignment="Left" Height="108" Margin="124,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <Button  x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="26,414,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btAdd_Click"/>
+        <Button  x:Name="btUpdate" Content="Обновить" HorizontalAlignment="Left" Margin="225,414,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btUpdate_Click"/>
+        <Button  x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="26,449,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btReset_Click"/>
+        <Button  x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="26,484,0,0" VerticalAlignment="Top" Width="331" Height="30" Click="btCancel_Click"/>
+        <Button  x:Name="btDelete" Content="Удалить" HorizontalAlignment="Left" Margin="225,449,0,0" VerticalAlignment="Top" Width="132"  Height="30" Click="btDelete_Click"/>
+
+    </Grid>
+</Window>
