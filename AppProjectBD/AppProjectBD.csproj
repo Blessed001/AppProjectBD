@@ -56,11 +56,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DirekciaWindow.xaml.cs">
+      <DependentUpon>DirekciaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FurnituraWindow.xaml.cs">
       <DependentUpon>FurnituraWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzdeleieWindow.xaml.cs">
       <DependentUpon>IzdeleieWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KladovchikWindow.xaml.cs">
+      <DependentUpon>KladovchikWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -68,11 +74,22 @@
     <Compile Include="TkaniWindow.xaml.cs">
       <DependentUpon>TkaniWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZakazWindow.xaml.cs">
+      <DependentUpon>ZakazWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DirekciaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FurnituraWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzdeleieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KladovchikWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TkaniWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZakazWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

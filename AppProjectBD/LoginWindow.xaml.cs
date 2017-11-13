@@ -34,11 +34,13 @@ namespace AppProjectBD
         {
             String connectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
             con = new OracleConnection(connectionString);
+
             try
             {
                 if (con.State == ConnectionState.Closed)
                     con.Open();
                 OracleCommand cmd = con.CreateCommand();
+                cmd.BindByName = true;
                 cmd.CommandText = "SELECT COUNT(1) FROM ПОЛЬЗОВАТЕЛЬ WHERE ЛОГИН=:ЛОГИН AND ПАРОЛЬ=:ПАРОЛЬ AND РОЛЬ=:РОЛЬ";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("ЛОГИН", OracleDbType.Varchar2, 150).Value = txtUsername.Text;
@@ -47,9 +49,31 @@ namespace AppProjectBD
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                    this.Close();
+                    if(FunctionCBox.SelectedItem.ToString() == "Дирекция")
+                    {
+                        DirekciaWindow d = new DirekciaWindow();
+                        d.Show();
+                        this.Close();
+                    }
+                    else if(FunctionCBox.SelectedItem.ToString() == "Заказчик")
+                    {
+                        ZakazWindow z = new ZakazWindow();
+                        z.Show();
+                        this.Close();
+                    }
+                    else if (FunctionCBox.SelectedItem.ToString() == "Менеджер")
+                    {
+                        MainWindow main = new MainWindow();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        KladovchikWindow k = new KladovchikWindow();
+                        k.Show();
+                        this.Close();
+                    }
+
                 }
                 else
                 {
