@@ -40,6 +40,8 @@ namespace AppProjectBD
             dt.Load(dr);
             TkanidataGrade.ItemsSource = dt.DefaultView;
             dr.Close();
+
+            lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
         }
         private void setConnection()
         {
@@ -61,6 +63,12 @@ namespace AppProjectBD
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             updateDateGrid();
+            cbChe.Items.Add("мм");
+            cbChe.Items.Add("см");
+            cbChe.Items.Add("м");
+            cbDli.Items.Add("мм");
+            cbDli.Items.Add("см");
+            cbDli.Items.Add("м");
         }
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
@@ -189,6 +197,71 @@ namespace AppProjectBD
                 btUpdate.IsEnabled = true;
                 btDelete.IsEnabled = true;
             }
-        }     
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            if (tbSearch.Text == "")
+            {
+                updateDateGrid();
+            }
+            else
+            {
+
+                OracleCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT АРТИКУЛ, НАИМЕНОВАНИЕ, ЦВЕТ, СОСТАВ, ШИРИНА, ДЛИНА, ЦЕНА, РИСУНОК FROM ТКАНЬ WHERE НАИМЕНОВАНИЕ LIKE '%" + tbSearch.Text + "%' ORDER BY АРТИКУЛ DESC";
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                TkanidataGrade.ItemsSource = dt.DefaultView;
+                dr.Close();
+
+                lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
+
+            }
+
+            
+        }
+        private void SetImage()
+        {
+            try
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Tkani/" + tbArtikul.Text + ".jpg");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                _ib.ImageSource = _bi;
+
+                stkImageTkani.Background = _ib;
+        }
+            catch(Exception)
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Tkani/notfoundimage.png");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                 _ib.ImageSource = _bi;
+
+                stkImageTkani.Background = _ib;
+            }
+
+}
+
+        private void tbArtikul_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetImage();
+        }
     }
 }

@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="Экран менеджера" Height="350" Width="525">
+        Title="Экран менеджера" Height="350" Width="612" Background="#FFFFFCD6">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="517">
+        <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="604">
             <MenuItem x:Name="menuFile1" Header="Файл">
                 <MenuItem x:Name="menuFile12" Header="Выход" Click="menuFile12_Click"/>
             </MenuItem>
-            <MenuItem Header="Ткани" Click="MenuItem_Click"/>
             <MenuItem Header="Изделие" Click="MenuItem_Click_1"/>
-            <MenuItem Header="Фурнитуры" Click="MenuItem_Click_2"/>
+            <MenuItem Header="Поступление заказ" Click="MenuItem_Click_3"/>
+            <MenuItem Header="Оформулять заказ" Click="MenuItem_Click"/>
+            <MenuItem Header="Склад|" Click="MenuItem_Click_4"/>
         </Menu>
+        <Label x:Name="lbLogined" Content="" HorizontalAlignment="Left" Margin="456,-4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Здравствуйте," Margin="376,-4,-376,4"/>
+        <StackPanel HorizontalAlignment="Left" Height="146" Margin="180,86,0,0" VerticalAlignment="Top" Width="196">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/logo.jpg"/>
+            </StackPanel.Background>
+        </StackPanel>
     </Grid>
 </Window>

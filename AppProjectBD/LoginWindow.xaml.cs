@@ -51,25 +51,25 @@ namespace AppProjectBD
                 {
                     if(FunctionCBox.SelectedItem.ToString() == "Дирекция")
                     {
-                        DirekciaWindow d = new DirekciaWindow();
+                        DirekciaWindow d = new DirekciaWindow(txtUsername.Text);
                         d.Show();
                         this.Close();
                     }
                     else if(FunctionCBox.SelectedItem.ToString() == "Заказчик")
                     {
-                        ZakazWindow z = new ZakazWindow();
+                        ZakazWindow z = new ZakazWindow(txtUsername.Text);
                         z.Show();
                         this.Close();
                     }
                     else if (FunctionCBox.SelectedItem.ToString() == "Менеджер")
                     {
-                        MainWindow main = new MainWindow();
+                        MainWindow main = new MainWindow(txtUsername.Text);
                         main.Show();
                         this.Close();
                     }
                     else
                     {
-                        KladovchikWindow k = new KladovchikWindow();
+                        KladovchikWindow k = new KladovchikWindow(txtUsername.Text);
                         k.Show();
                         this.Close();
                     }
@@ -90,7 +90,6 @@ namespace AppProjectBD
             }
 
         }
-
         private void btCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

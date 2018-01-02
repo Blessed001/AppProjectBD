@@ -23,8 +23,30 @@ namespace AppProjectBD
         {
             InitializeComponent();
         }
+        public KladovchikWindow(string login)
+        {
+            InitializeComponent();
+            lbLogined.Content = "Здравствуйте, " + login;
+        }
+        private void mTikani_Click(object sender, RoutedEventArgs e)
+        {
+            TkaniWindow t = new TkaniWindow();
+            t.Show();
+        }
 
-        private void menuFile1_Click(object sender, RoutedEventArgs e)
+        private void mfurniture_Click(object sender, RoutedEventArgs e)
+        {
+            FurnituraWindow f = new FurnituraWindow();
+            f.Show();
+        }
+
+        private void mDocument_Click(object sender, RoutedEventArgs e)
+        {
+            skladWindow s = new skladWindow();
+            s.Show();
+        }
+
+        private void menuFile12_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow l = new LoginWindow();
             l.Show();

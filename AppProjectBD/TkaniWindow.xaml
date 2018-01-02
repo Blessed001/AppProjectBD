@@ -5,33 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="TkaniWindow" Height="580.372" Width="1230.638" Closed="Window_Closed" Loaded="Window_Loaded">
+        Title="TkaniWindow" Height="748.372" Width="1266.638" Closed="Window_Closed" Loaded="Window_Loaded" Background="#FFFFFCD6">
     <Grid>
-        <GroupBox Header="Информация о тканях" FontSize="20" HorizontalAlignment="Left" Height="402" Margin="10,0,0,0" VerticalAlignment="Top" Width="362" FontWeight="Bold"/>
-        <DataGrid x:Name="TkanidataGrade" HorizontalAlignment="Left" Height="504" Margin="407,10,0,0" VerticalAlignment="Top" Width="806" RenderTransformOrigin="0.571,0.453" SelectionChanged="dataGradeTkani_SelectionChanged"/>
-        <Label Content="Артикул" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Наименование" HorizontalAlignment="Left" Margin="26,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Цвет" HorizontalAlignment="Left" Margin="26,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Изображение" HorizontalAlignment="Left" Margin="26,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Состав" HorizontalAlignment="Left" Margin="26,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Ширина" HorizontalAlignment="Left" Margin="26,254,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Длина" HorizontalAlignment="Left" Margin="26,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Цена" HorizontalAlignment="Left" Margin="26,328,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <Label Content="Рисунок" HorizontalAlignment="Left" Margin="26,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
-        <TextBox x:Name="tbArtikul" HorizontalAlignment="Left" Height="26" Margin="124,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbNaimenovania" HorizontalAlignment="Left" Height="26" Margin="124,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbTsvet" HorizontalAlignment="Left" Height="26" Margin="124,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbCostav" HorizontalAlignment="Left" Height="26" Margin="124,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbChirina" HorizontalAlignment="Left" Height="26" Margin="124,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbDlina" HorizontalAlignment="Left" Height="26" Margin="124,291,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbTsena" HorizontalAlignment="Left" Height="26" Margin="124,328,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <TextBox x:Name="tbRisunak" HorizontalAlignment="Left" Height="26" Margin="124,365,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <Button  x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="26,414,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btAdd_Click"/>
-        <Button  x:Name="btUpdate" Content="Обновить" HorizontalAlignment="Left" Margin="225,414,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btUpdate_Click"/>
-        <Button  x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="26,449,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btReset_Click"/>
-        <Button  x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="26,484,0,0" VerticalAlignment="Top" Width="331" Height="30" Click="btCancel_Click"/>
-        <Button  x:Name="btDelete" Content="Удалить" HorizontalAlignment="Left" Margin="225,449,0,0" VerticalAlignment="Top" Width="132" Click="btDelete_Click" Height="30"/>
-
+        <GroupBox Header="Информация о тканях" FontSize="20" HorizontalAlignment="Left" Height="551" Margin="10,9,0,0" VerticalAlignment="Top" Width="362" FontWeight="Bold"/>
+        <DataGrid x:Name="TkanidataGrade" HorizontalAlignment="Left" Height="621" Margin="407,69,0,0" VerticalAlignment="Top" Width="806" RenderTransformOrigin="0.571,0.453" SelectionChanged="dataGradeTkani_SelectionChanged" Background="#FFB5D5CA"/>
+        <Label Content="Артикул" HorizontalAlignment="Left" Margin="26,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="26,306,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Цвет" HorizontalAlignment="Left" Margin="26,343,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Состав" HorizontalAlignment="Left" Margin="26,375,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Ширина" HorizontalAlignment="Left" Margin="26,412,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Длина" HorizontalAlignment="Left" Margin="26,449,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Цена" HorizontalAlignment="Left" Margin="26,486,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <Label Content="Рисунок" HorizontalAlignment="Left" Margin="26,523,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.589" Height="37" Width="93"/>
+        <TextBox x:Name="tbArtikul" HorizontalAlignment="Left" Height="26" Margin="124,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233" TextChanged="tbArtikul_TextChanged"/>
+        <TextBox x:Name="tbNaimenovania" HorizontalAlignment="Left" Height="26" Margin="124,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbTsvet" HorizontalAlignment="Left" Height="26" Margin="124,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbCostav" HorizontalAlignment="Left" Height="26" Margin="124,375,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="tbChirina" HorizontalAlignment="Left" Height="26" Margin="124,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="tbDlina" HorizontalAlignment="Left" Height="26" Margin="124,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="tbTsena" HorizontalAlignment="Left" Height="26" Margin="124,486,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207"/>
+        <TextBox x:Name="tbRisunak" HorizontalAlignment="Left" Height="26" Margin="124,523,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <Button  x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="26,562,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btAdd_Click" Background="#FFD1EEFC"/>
+        <Button  x:Name="btUpdate" Content="Обновить" HorizontalAlignment="Left" Margin="225,562,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btUpdate_Click" IsEnabled="False" Background="#FFD1EEFC"/>
+        <Button  x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="26,597,0,0" VerticalAlignment="Top" Width="132" Height="30" Click="btReset_Click" Background="#FFD1EEFC"/>
+        <Button  x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="26,632,0,0" VerticalAlignment="Top" Width="331" Height="30" Click="btCancel_Click" Background="#FFD1EEFC"/>
+        <Button  x:Name="btDelete" Content="Удалить" HorizontalAlignment="Left" Margin="225,597,0,0" VerticalAlignment="Top" Width="132" Click="btDelete_Click" Height="30" IsEnabled="False" Background="#FFD1EEFC"/>
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Height="26" Margin="585,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="279" TextChanged="tbSearch_TextChanged"/>
+        <Label Content="Поиск по наименованию" HorizontalAlignment="Left" Margin="407,32,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbCount" Content="" HorizontalAlignment="Left" Margin="880,32,0,0" VerticalAlignment="Top" Width="333"/>
+        <Label Content="Изображения" HorizontalAlignment="Left" Margin="26,40,0,0" VerticalAlignment="Top" Height="44" Width="206"/>
+        <StackPanel x:Name="stkImageTkani" HorizontalAlignment="Left" Height="185" Margin="56,69,0,0" VerticalAlignment="Top" Width="269"/>
+        <Label Content="Руб." HorizontalAlignment="Left" Margin="331,486,0,0" VerticalAlignment="Top" Width="50"/>
+        <ComboBox x:Name="cbChe" HorizontalAlignment="Left" Margin="288,412,0,0" VerticalAlignment="Top" Width="69" Height="26"/>
+        <ComboBox x:Name="cbDli" HorizontalAlignment="Left" Margin="288,449,0,0" VerticalAlignment="Top" Width="69" Height="26"/>
     </Grid>
 
 </Window>

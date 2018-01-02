@@ -15,6 +15,8 @@ using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
+using Microsoft.Win32;
+using System.IO;
 
 namespace AppProjectBD
 {
@@ -39,6 +41,8 @@ namespace AppProjectBD
             dt.Load(dr);
             IzdeliedataGrade.ItemsSource = dt.DefaultView;
             dr.Close();
+
+            lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
         }
         private void setConnection()
         {
@@ -62,6 +66,12 @@ namespace AppProjectBD
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             updateDateGrid();
+            cbChi.Items.Add("мм");
+            cbChi.Items.Add("см");
+            cbChi.Items.Add("м");
+            cbDli.Items.Add("мм");
+            cbDli.Items.Add("см");
+            cbDli.Items.Add("м");
         }
 
         private void IzdeliedataGrade_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,6 +145,7 @@ namespace AppProjectBD
             cmd.CommandType = CommandType.Text;
             cmd.BindByName = true;
 
+
             switch (state)
             {
                 case 0:
@@ -143,7 +154,7 @@ namespace AppProjectBD
                     cmd.Parameters.Add("НАИМЕНОВАНИЕ", OracleDbType.Varchar2, 25).Value = tbNaimenovania.Text;
                     cmd.Parameters.Add("ШИРИНА", OracleDbType.Double, 30).Value = Double.Parse(tbChirina.Text);
                     cmd.Parameters.Add("ДЛИНА", OracleDbType.Double, 30).Value = Double.Parse(tbDlina.Text);
-                    cmd.Parameters.Add("КОМНТАРИЙ", OracleDbType.Varchar2, 4000).Value = tbCommentari.Text;
+                    cmd.Parameters.Add("КОМНТАРИЙ", OracleDbType.Varchar2, 4000).Value = tbCommentari.Text;   
                     break;
 
                 case 1:
@@ -152,7 +163,6 @@ namespace AppProjectBD
                     cmd.Parameters.Add("ШИРИНА", OracleDbType.Double, 30).Value = Double.Parse(tbChirina.Text);
                     cmd.Parameters.Add("ДЛИНА", OracleDbType.Double, 30).Value = Double.Parse(tbDlina.Text);
                     cmd.Parameters.Add("КОМНТАРИЙ", OracleDbType.Varchar2, 4000).Value = tbCommentari.Text;
-
                     cmd.Parameters.Add("АРТИКУЛ", OracleDbType.Varchar2, 25).Value = tbArtikul.Text;
                     break;
 
@@ -176,6 +186,78 @@ namespace AppProjectBD
             {
                 MessageBox.Show("Пажалуйста проверяете все поли");
             }
+        }
+
+        //private void BroserImage_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    OpenFileDialog ofd = new OpenFileDialog();
+        //    ofd.ShowDialog();
+        //    tbImagePath.Text = ofd.FileName;
+            
+        //}
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (tbSearch.Text == "")
+            {
+                updateDateGrid();
+            }
+            else
+            {
+
+                OracleCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT АРТИКУЛ, НАИМЕНОВАНИЕ, ШИРИНА, ДЛИНА, КОМНТАРИЙ FROM ИЗДЕЛИЕ WHERE НАИМЕНОВАНИЕ LIKE '%" + tbSearch.Text + "%' ORDER BY АРТИКУЛ DESC";
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                IzdeliedataGrade.ItemsSource = dt.DefaultView;
+                dr.Close();
+
+                lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
+
+            }          
+        }
+        private void SetImage()
+        {
+            try
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Izdeliya/" + tbArtikul.Text + ".jpg");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                _ib.ImageSource = _bi;
+
+                stkImage.Background = _ib;
+            }
+            catch(Exception)
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Izdeliya/notfoundimage.png");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                _ib.ImageSource = _bi;
+
+                stkImage.Background = _ib;
+            }         
+
+        }
+
+        private void tbArtikul_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetImage();
         }
     }
 }

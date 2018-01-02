@@ -23,12 +23,35 @@ namespace AppProjectBD
         {
             InitializeComponent();
         }
-
+        public ZakazWindow(string login)
+        {
+            InitializeComponent();
+            lbLogined.Content = login;
+        }  
         private void menuFile1_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow l = new LoginWindow();
             l.Show();
             this.Close();
+        }
+
+        private void menuFile10_Click(object sender, RoutedEventArgs e)
+        {
+            OrderWindow o = new OrderWindow(lbLogined.Content.ToString());
+            o.Show();
+        }
+
+
+        private void menuFile_Click(object sender, RoutedEventArgs e)
+        {
+            OrderListWindow o = new OrderListWindow();
+            o.Show();
+        }
+
+        private void menuFile0_Click_1(object sender, RoutedEventArgs e)
+        {
+            curtWindow c = new curtWindow();
+            c.Show();
         }
     }
 }

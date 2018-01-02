@@ -24,6 +24,11 @@
             <Button x:Name="btnSubmit" Click="btnSubmit_Click" Content="Входить" Margin="26,168,30,95" Background="#545d6a" Foreground="White" FontSize="18" Grid.Row="1"/>
             <Button x:Name="btCancel" Content="Отмениь" Margin="26,248,30,15" Background="#545d6a" Foreground="White" FontSize="18" Click="btCancel_Click" Grid.Row="1"/>
             <Button Content="Регистрироваться" Margin="26,208,30,55" Grid.Row="1" Click="Button_Click" Background="#545d6a" Foreground="White" FontSize="18"/>
+            <StackPanel HorizontalAlignment="Left" Height="47" Margin="0,-55,0,0" VerticalAlignment="Top" Width="66">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Images/logo.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

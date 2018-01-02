@@ -1,0 +1,34 @@
+﻿<Window x:Class="AppProjectBD.ZakazMWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppProjectBD"
+        mc:Ignorable="d"
+        Title="ZakazMWindow1" Height="328.195" Width="653.007" Closed="Window_Closed" Loaded="Window_Loaded_1" Background="#FFFFFCD6">
+    <Grid>
+        <Button x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="87" Click="btAdd_Click" Background="#FFD1EEFC"/>
+        <DataGrid x:Name="dataGradeZakaz" HorizontalAlignment="Left" Height="203" Margin="232,32,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="dataGradeZakaz_SelectionChanged" Background="#FFB5D5CA"/>
+        <Label Content="Список заказов" HorizontalAlignment="Left" Margin="232,6,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btConstrutorIzdelie" Content="Конструтор изделия" HorizontalAlignment="Left" Margin="232,262,0,0" VerticalAlignment="Top" Width="120" Click="btConstrutorIzdelie_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="517,262,0,0" VerticalAlignment="Top" Width="95" Click="btCancel_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btUpdade" Content="Обновить" HorizontalAlignment="Left" Margin="110,233,0,0" VerticalAlignment="Top" Width="95" Click="btUpdade_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" Width="87" Click="btReset_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btDelete" Content="Удалить" HorizontalAlignment="Left" Margin="110,262,0,0" VerticalAlignment="Top" Width="95" Click="btDelete_Click" Background="#FFD1EEFC"/>
+        <DatePicker x:Name="dataZakaz" HorizontalAlignment="Left" Margin="81,67,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="tbStoimost" HorizontalAlignment="Left" Height="23" Margin="81,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86"/>
+        <ComboBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="81,99,0,0" VerticalAlignment="Top" Width="124"/>
+        <ComboBox x:Name="cbManager" HorizontalAlignment="Left" Margin="81,165,0,0" VerticalAlignment="Top" Width="124"/>
+        <ComboBox x:Name="cbZakachiq" HorizontalAlignment="Left" Margin="81,132,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label Content="Дать" HorizontalAlignment="Left" Margin="14,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Статус" HorizontalAlignment="Left" Margin="14,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="Закачик" HorizontalAlignment="Left" Margin="13,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Манажер" HorizontalAlignment="Left" Margin="14,165,0,0" VerticalAlignment="Top"/>
+        <Label Content="Стоимость" HorizontalAlignment="Left" Margin="13,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер" HorizontalAlignment="Left" Margin="14,29,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNumber" HorizontalAlignment="Left" Height="23" Margin="81,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124" IsEnabled="False"/>
+        <Label Content="Руб." HorizontalAlignment="Left" Margin="176,195,0,0" VerticalAlignment="Top" Height="27"/>
+        <Button x:Name="btPrint" Content="Печать Список заказ" HorizontalAlignment="Left" Margin="372,262,0,0" VerticalAlignment="Top" Width="126" Background="#FFD1EEFC" Click="btPrint_Click"/>
+        <Label x:Name="lbNumberZ" Content="" HorizontalAlignment="Left" Margin="482,236,0,0" VerticalAlignment="Top" Width="130"/>
+    </Grid>
+</Window>

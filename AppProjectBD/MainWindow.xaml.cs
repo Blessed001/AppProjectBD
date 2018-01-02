@@ -28,6 +28,12 @@ namespace AppProjectBD
         {
             InitializeComponent();
         }
+        public MainWindow(string login)
+        {
+            InitializeComponent();
+            lbLogined.Content = login;
+        }
+
 
         private void menuFile12_Click(object sender, RoutedEventArgs e)
         {
@@ -36,22 +42,28 @@ namespace AppProjectBD
             this.Close();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            TkaniWindow t = new TkaniWindow();
-            t.Show();
-        }
-
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             IzdeleieWindow i = new IzdeleieWindow();
             i.Show();
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
-            FurnituraWindow f = new FurnituraWindow();
-            f.Show();
+            ZakazMWindow1 z = new ZakazMWindow1();
+            z.Show();
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            skladWindow s = new skladWindow();
+            s.Show();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OrderWindowM o = new OrderWindowM(lbLogined.Content.ToString());
+            o.Show();
         }
     }
 }

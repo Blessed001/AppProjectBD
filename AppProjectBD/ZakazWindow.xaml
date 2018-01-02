@@ -5,12 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="Экран заказчика" Height="350" Width="525">
+        Title="Экран заказчика" Height="350" Width="525" Background="#FFFFFCD6">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="517">
             <MenuItem x:Name="menuFile1" Header="Файл" Click="menuFile1_Click">
                 <MenuItem x:Name="menuFile12" Header="Выход"/>
             </MenuItem>
+            <MenuItem x:Name="menuFile10" Header="Заказ" Click="menuFile10_Click"/>
+            <MenuItem x:Name="menuFile" Header="Список заказ" Click="menuFile_Click"/>
+            <MenuItem x:Name="menuFile0" Header="Упоковка заказа" Click="menuFile0_Click_1"/>
+
         </Menu>
+        <Label x:Name="lbLogined" Content="" HorizontalAlignment="Left" Margin="426,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,0.551"/>
+        <Label Content="Здравствуйте, " HorizontalAlignment="Left" Margin="347,0,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Left" Height="180" Margin="159,77,0,0" VerticalAlignment="Top" Width="196">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/logo.jpg"/>
+            </StackPanel.Background>
+        </StackPanel>
     </Grid>
 </Window>

@@ -39,6 +39,8 @@ namespace AppProjectBD
             dt.Load(dr);
             FurnituradataGrade.ItemsSource = dt.DefaultView;
             dr.Close();
+
+            lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
         }
         private void setConnection()
         {
@@ -62,6 +64,13 @@ namespace AppProjectBD
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             updateDateGrid();
+            cbChi.Items.Add("мм");
+            cbChi.Items.Add("см");
+            cbChi.Items.Add("м");
+            cbDli.Items.Add("мм");
+            cbDli.Items.Add("см");
+            cbDli.Items.Add("м");
+            cbVes.Items.Add("кг");
         }
 
         private void FurnituradataGrade_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -186,5 +195,65 @@ namespace AppProjectBD
             }
         }
 
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbSearch.Text == "")
+            {
+                updateDateGrid();
+            }
+            else
+            {
+
+                OracleCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT АРТИКУЛ, НАИМЕНОВАНИЕ, ТИП, ШИРИНА, ДЛИНА, ВЕС, ЦЕНА FROM ФУРНИТУРА WHERE НАИМЕНОВАНИЕ LIKE '%" + tbSearch.Text + "%' ORDER BY АРТИКУЛ DESC";
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                FurnituradataGrade.ItemsSource = dt.DefaultView;
+                dr.Close();
+
+                lbCount.Content = "Были найдены " + dt.Rows.Count + " строк ";
+
+            }
+        }
+        private void SetImage()
+        {
+            try
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Furniture/" + tbArtikul.Text + ".jpg");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                _ib.ImageSource = _bi;
+
+                stFurnitureImage.Background = _ib;
+            }
+            catch (Exception)
+            {
+                Image _image = new Image();
+                BitmapImage _bi = new BitmapImage();
+                _bi.BeginInit();
+                _bi.UriSource = new System.Uri("pack://Application:,,,/Images/Furniture/notfoundimage.png");
+                _bi.EndInit();
+
+                _image.Source = _bi;
+
+                ImageBrush _ib = new ImageBrush();
+                _ib.ImageSource = _bi;
+
+                stFurnitureImage.Background = _ib;
+            }
+
+        }
+        private void tbArtikul_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetImage();
+        }
     }
 }

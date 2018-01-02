@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="Экран кладовщика" Height="350" Width="525">
+        Title="Экран кладовщика" Height="350" Width="525" Background="#FFFFFCD6">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="517">
-            <MenuItem x:Name="menuFile1" Header="Файл" Click="menuFile1_Click">
-                <MenuItem x:Name="menuFile12" Header="Выход"/>
+            <MenuItem x:Name="menuFile1" Header="Файл">
+                <MenuItem x:Name="menuFile12" Header="Выход" Click="menuFile12_Click"/>
             </MenuItem>
+            <MenuItem x:Name="menuFile11" Header="Список тавары">
+                <MenuItem x:Name="mTikani" Header="Ткани" Click="mTikani_Click"/>
+                <MenuItem x:Name="mfurniture" Header="Фурнитуры" Click="mfurniture_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mDocument" Header="Склад" Click="mDocument_Click"/>
+
+
         </Menu>
+        <Label x:Name="lbLogined" Content="" HorizontalAlignment="Left" Margin="354,-4,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Left" Height="158" Margin="163,91,0,0" VerticalAlignment="Top" Width="201">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/logo.jpg"/>
+            </StackPanel.Background>
+        </StackPanel>
     </Grid>
 </Window>

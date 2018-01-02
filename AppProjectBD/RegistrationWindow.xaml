@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppProjectBD"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="322" Width="326" Closed="Window_Closed">
+        Title="RegistrationWindow" Height="322" Width="326" Closed="Window_Closed" Background="#FFFFFCD6">
     <Grid Margin="10,0,0,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,10 +19,10 @@
         <PasswordBox x:Name="tbPassword_again" HorizontalAlignment="Left" Height="19" Margin="138,167,0,0" VerticalAlignment="Top" Width="119"/>
         <PasswordBox x:Name="tbPassword" HorizontalAlignment="Left" Height="19" Margin="138,132,0,0" VerticalAlignment="Top" Width="119"/>
         <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="19" Margin="138,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119"/>
-        <Button x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Width="78" Click="btReset_Click"/>
-        <Button x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.013,0.55" Click="btAdd_Click"/>
-        <Button x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="204,212,0,0" VerticalAlignment="Top" Width="78" Click="btCancel_Click"/>
-        <Button x:Name="btLogin" Content="Логин" HorizontalAlignment="Left" Height="22" Margin="10,244,0,0" VerticalAlignment="Top" Width="272" Click="btLogin_Click"/>
+        <Button x:Name="btReset" Content="Очистить" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Width="78" Click="btReset_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.013,0.55" Click="btAdd_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btCancel" Content="Отменить" HorizontalAlignment="Left" Margin="204,212,0,0" VerticalAlignment="Top" Width="78" Click="btCancel_Click" Background="#FFD1EEFC"/>
+        <Button x:Name="btLogin" Content="Логин" HorizontalAlignment="Left" Height="22" Margin="10,244,0,0" VerticalAlignment="Top" Width="272" Click="btLogin_Click" Background="#FFD1EEFC"/>
 
 
     </Grid>
